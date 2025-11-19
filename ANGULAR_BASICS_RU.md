@@ -10,6 +10,7 @@
 - [Pipes (Пайпы)](#pipes-пайпы)
 - [Directives (Директивы)](#directives-директивы)
 - [Templates (Шаблоны)](#templates-шаблоны)
+- [Environments (Окружения)](#environments-окружения)
 - [Структура проекта](#структура-проекта)
 - [Запуск проекта](#запуск-проекта)
 
@@ -327,6 +328,150 @@ export class HighlightDirective {
 ### Пример в проекте
 
 📁 `src/app/components/demo-templates/` - Полная демонстрация всех возможностей
+
+---
+
+## Environments (Окружения)
+
+### Что такое Environments?
+
+**Environments** - это система конфигурации приложения для различных окружений (development, staging, production).
+
+### Зачем нужны окружения?
+
+- Разные API URLs для разработки и продакшена
+- Различные ключи для сервисов
+- Управление feature flags
+- Настройки логирования
+- Оптимизация для разных режимов
+
+### Структура окружений
+
+В проекте есть 4 файла окружений:
+
+1. **environment.ts** - Development (разработка)
+2. **environment.prod.ts** - Production (продакшн)
+3. **environment.staging.ts** - Staging (тестирование)
+4. **environment.test.ts** - Testing (юнит-тесты)
+
+### Структура файла окружения
+
+```typescript
+export const environment = {
+  name: 'development',
+  production: false,
+  apiUrl: 'http://localhost:3000/api',
+  apiVersion: 'v1',
+  appUrl: 'http://localhost:4200',
+  
+  features: {
+    darkMode: true,
+    notifications: true,
+    experimentalFeatures: true
+  },
+  
+  logging: {
+    level: 'debug',
+    enableConsole: true,
+    enableRemote: false
+  }
+};
+```
+
+### Использование в коде
+
+#### Прямой импорт
+
+```typescript
+import { environment } from '../environments/environment';
+
+export class MyService {
+  private apiUrl = environment.apiUrl;
+  
+  getData() {
+    return this.http.get(`${environment.apiUrl}/data`);
+  }
+}
+```
+
+#### Через EnvironmentService (рекомендуется)
+
+```typescript
+import { EnvironmentService } from './services/environment.service';
+
+export class MyComponent {
+  constructor(private envService: EnvironmentService) {}
+  
+  ngOnInit() {
+    // Получить API URL
+    const apiUrl = this.envService.getApiUrl();
+    
+    // Построить endpoint
+    const endpoint = this.envService.getApiEndpoint('users');
+    // Результат: http://localhost:3000/api/v1/users
+    
+    // Проверить режим
+    if (this.envService.isProduction()) {
+      console.log('Production mode');
+    }
+    
+    // Проверить feature flag
+    if (this.envService.hasFeature('darkMode')) {
+      this.enableDarkMode();
+    }
+  }
+}
+```
+
+### Команды для разных окружений
+
+```bash
+# Development
+npm start
+npm run start:dev
+
+# Staging
+npm run start:staging
+
+# Production
+npm run start:prod
+
+# Сборка
+npm run build          # Production
+npm run build:dev      # Development
+npm run build:staging  # Staging
+```
+
+### Примеры в проекте
+
+📁 `src/environments/` - Все файлы окружений  
+📁 `src/app/services/environment.service.ts` - Сервис для работы с окружениями  
+📁 `src/app/components/environment-info/` - Компонент с информацией об окружении
+
+### Feature Flags
+
+Feature flags позволяют включать/выключать функциональность:
+
+```typescript
+// В environment.ts
+features: {
+  darkMode: true,
+  notifications: false,
+  experimentalFeatures: true
+}
+
+// В коде
+if (environment.features.darkMode) {
+  this.enableDarkMode();
+}
+```
+
+### Безопасность
+
+⚠️ **Важно:**
+- НЕ коммитьте реальные API ключи в Git
+- Используйте переменные окружения для секретов
+- Не храните пароли в environment файлах
 
 ---
 

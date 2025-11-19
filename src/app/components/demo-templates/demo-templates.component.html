@@ -1,6 +1,6 @@
 <div class="demo-container">
   <h1>{{ title }}</h1>
-  
+
   <!-- ==================== INTERPOLATION ==================== -->
   <section class="demo-section">
     <h2>1. Interpolation (Интерполяция)</h2>
@@ -17,18 +17,18 @@
     <h2>2. Property Binding (Привязка свойств)</h2>
     <div class="demo-content">
       <!-- Привязка атрибута src -->
-      <img [src]="'https://angular.io/assets/images/logos/angular/angular.svg'" 
-           [alt]="'Angular Logo'" 
+      <img [src]="'https://angular.io/assets/images/logos/angular/angular.svg'"
+           [alt]="'Angular Logo'"
            [width]="100">
-      
+
       <!-- Привязка disabled -->
       <button [disabled]="counter >= 10">Кнопка (отключается при counter >= 10)</button>
-      
+
       <!-- Привязка стилей -->
       <div [style.color]="selectedColor" [style.fontSize.px]="20">
         Цветной текст (выбранный цвет: {{ selectedColor }})
       </div>
-      
+
       <!-- Привязка классов -->
       <p [class.active]="isVisible" [class.inactive]="!isVisible">
         Текст с динамическим классом
@@ -48,13 +48,11 @@
           <button (click)="increment()">+</button>
         </div>
       </div>
-      
+
       <div class="input-demo">
-        <input 
-          type="text" 
+        <input
+          type="text"
           (input)="onInputChange($event)"
-          (focus)="console.log('Focus!')"
-          (blur)="console.log('Blur!')"
           placeholder="Введите текст">
       </div>
     </div>
@@ -66,7 +64,7 @@
     <div class="demo-content">
       <input type="text" [(ngModel)]="inputValue" placeholder="Введите текст">
       <p>Вы ввели: <strong>{{ inputValue }}</strong></p>
-      
+
       <input type="color" [(ngModel)]="selectedColor">
       <p>Выбранный цвет: <span [style.color]="selectedColor">{{ selectedColor }}</span></p>
     </div>
@@ -117,14 +115,13 @@
       <h3>Встроенные пайпы:</h3>
       <p>Uppercase: {{ 'angular' | uppercase }}</p>
       <p>Lowercase: {{ 'ANGULAR' | lowercase }}</p>
-      <p>Date: {{ Date.now() | date:'dd.MM.yyyy HH:mm' }}</p>
       <p>Currency: {{ 1234.56 | currency:'RUB' }}</p>
       <p>Percent: {{ 0.75 | percent }}</p>
       <p>JSON: {{ user | json }}</p>
 
       <h3>Кастомный пайп (Highlight):</h3>
       <input type="text" [(ngModel)]="searchText" placeholder="Поиск...">
-      <div 
+      <div
         [innerHTML]="'Angular - это платформа для создания веб-приложений' | highlight:searchText"
         class="highlight-demo">
       </div>

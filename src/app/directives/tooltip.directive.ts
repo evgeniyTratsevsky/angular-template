@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input, Renderer2, OnDestroy } from '@angular/core';
 
 /**
  * DIRECTIVE - Директива для отображения подсказок
@@ -7,7 +7,7 @@ import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/
   selector: '[appTooltip]',
   standalone: true
 })
-export class TooltipDirective {
+export class TooltipDirective implements OnDestroy {
   @Input() appTooltip = ''; // Текст подсказки
   private tooltipElement: HTMLElement | null = null;
 
@@ -23,6 +23,12 @@ export class TooltipDirective {
   }
 
   @HostListener('mouseleave') onMouseLeave() {
+    this.removeTooltip();
+  }
+
+  // Lifecycle Hook - очистка подсказки при уничтожении директивы
+  ngOnDestroy(): void {
+    // Убеждаемся, что подсказка удалена даже если компонент уничтожен во время hover
     this.removeTooltip();
   }
 

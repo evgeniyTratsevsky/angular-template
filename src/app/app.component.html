@@ -1,4 +1,4 @@
-<!-- 
+<!--
   Главный компонент приложения
   Демонстрация всех основных концепций Angular
 -->
@@ -10,7 +10,7 @@
   </header>
 
   <nav class="app-nav">
-    <button 
+    <button
       *ngFor="let tab of tabs"
       [class.active]="activeTab === tab.id"
       (click)="setActiveTab(tab.id)"
@@ -26,36 +26,36 @@
       <div class="info-card" [appHighlight]="'#e8eaf6'">
         <h2>📚 Основы Angular</h2>
         <p>Этот проект демонстрирует все основные концепции Angular:</p>
-        
+
         <div class="concepts-grid">
           <div class="concept-card">
             <h3>🧩 Modules (Модули)</h3>
             <p>Организация приложения в логические блоки</p>
-            <code>@NgModule</code>
+            <code>&#64;NgModule</code>
           </div>
 
           <div class="concept-card">
             <h3>🎯 Components (Компоненты)</h3>
             <p>Основные строительные блоки UI</p>
-            <code>@Component</code>
+            <code>&#64;Component</code>
           </div>
 
           <div class="concept-card">
             <h3>⚙️ Services (Сервисы)</h3>
             <p>Бизнес-логика и работа с данными</p>
-            <code>@Injectable</code>
+            <code>&#64;Injectable</code>
           </div>
 
           <div class="concept-card">
             <h3>🔄 Pipes (Пайпы)</h3>
             <p>Трансформация данных в шаблонах</p>
-            <code>@Pipe</code>
+            <code>&#64;Pipe</code>
           </div>
 
           <div class="concept-card">
             <h3>✨ Directives (Директивы)</h3>
             <p>Изменение поведения DOM элементов</p>
-            <code>@Directive</code>
+            <code>&#64;Directive</code>
           </div>
 
           <div class="concept-card">
@@ -95,7 +95,7 @@
     <section *ngIf="activeTab === 'directives'" class="tab-content">
       <div class="directives-demo">
         <h2>Кастомные директивы</h2>
-        
+
         <div class="directive-example">
           <h3>Директива appHighlight</h3>
           <p>Наведите мышь на блоки ниже:</p>
@@ -141,7 +141,7 @@
     <section *ngIf="activeTab === 'pipes'" class="tab-content">
       <div class="pipes-demo">
         <h2>Пайпы (Pipes)</h2>
-        
+
         <div class="pipe-example">
           <h3>Встроенные пайпы Angular:</h3>
           <table>
@@ -215,19 +215,24 @@
       </div>
     </section>
 
+    <!-- Вкладка: Environment -->
+    <section *ngIf="activeTab === 'environment'" class="tab-content">
+      <app-environment-info></app-environment-info>
+    </section>
+
     <!-- Вкладка: Модули -->
     <section *ngIf="activeTab === 'modules'" class="tab-content">
       <div class="modules-demo">
         <h2>Модули Angular (NgModules)</h2>
-        
+
         <div class="module-info-card">
           <h3>Что такое модуль?</h3>
-          <p>NgModule - это класс с декоратором @NgModule, который организует связанные компоненты, директивы, пайпы и сервисы.</p>
+          <p>NgModule - это класс с декоратором &#64;NgModule, который организует связанные компоненты, директивы, пайпы и сервисы.</p>
         </div>
 
         <div class="module-structure">
-          <h3>Структура @NgModule:</h3>
-          <pre><code>@NgModule({{'{'}}{{'
+          <h3>Структура &#64;NgModule:</h3>
+          <pre><code>&#64;NgModule({{'{'}}{{'
   declarations: [],  // Компоненты, директивы, пайпы
   imports: [],       // Другие модули
   exports: [],       // Что доступно другим модулям
@@ -265,7 +270,7 @@ export class MyModule {{'{ }'}}</code></pre>
         <div class="standalone-info">
           <h3>⚡ Standalone компоненты (Angular 14+):</h3>
           <p>В современных версиях Angular можно использовать компоненты без модулей!</p>
-          <pre><code>@Component({{'{'}}{{'
+          <pre><code>&#64;Component({{'{'}}{{'
   selector: \'app-my-component\',
   standalone: true,     // Standalone компонент
   imports: [CommonModule],
@@ -287,3 +292,5 @@ export class MyComponent {{'{ }'}}</code></pre>
 </div>
 
 <router-outlet />
+
+<app-user></app-user>

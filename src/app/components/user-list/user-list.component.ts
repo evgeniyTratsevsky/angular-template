@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Subscription } from 'rxjs';
 import { UserService, User } from '../../services/user.service';
 import { TruncatePipe } from '../../pipes/truncate.pipe';
 import { HighlightDirective } from '../../directives/highlight.directive';
@@ -24,19 +25,28 @@ import { TooltipDirective } from '../../directives/tooltip.directive';
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.less']
 })
-export class UserListComponent implements OnInit {
+export class UserListComponent implements OnInit, OnDestroy {
   users: User[] = [];
   selectedUser: User | null = null;
+  private subscription: Subscription = new Subscription();
 
   // Dependency Injection - внедрение зависимостей
   constructor(private userService: UserService) {}
 
   // Lifecycle Hook - хук жизненного цикла
   ngOnInit(): void {
-    // Подписка на данные из сервиса
-    this.userService.users$.subscribe(users => {
-      this.users = users;
-    });
+    // Подписка на данные из сервиса (сохраняем для последующей отписки)
+    this.subscription.add(
+      this.userService.users$.subscribe(users => {
+        this.users = users;
+      })
+    );
+  }
+
+  // Lifecycle Hook - очистка ресурсов при уничтожении компонента
+  ngOnDestroy(): void {
+    // Отписываемся от всех подписок, чтобы избежать утечек памяти
+    this.subscription.unsubscribe();
   }
 
   // Метод для выбора пользователя

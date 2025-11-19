@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 /**
  * Компонент для демонстрации работы с модулями
@@ -6,11 +7,13 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
  */
 @Component({
   selector: 'app-examples',
+  standalone: true,
+  imports: [CommonModule],
   template: `
     <div class="examples-container">
       <h2>Feature Module Example</h2>
       <p>Этот компонент является частью отдельного feature модуля (ExamplesModule)</p>
-      
+
       <div class="lifecycle-info">
         <h3>Жизненный цикл компонента:</h3>
         <ul>
@@ -85,7 +88,7 @@ export class ExamplesComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.lifecycleHooks.push('2. ngOnInit() вызван');
     console.log('ExamplesComponent: ngOnInit');
-    
+
     // Запускаем таймер для демонстрации
     this.intervalId = setInterval(() => {
       this.currentTime = new Date();
@@ -96,7 +99,7 @@ export class ExamplesComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.lifecycleHooks.push('3. ngOnDestroy() вызван');
     console.log('ExamplesComponent: ngOnDestroy');
-    
+
     // Очищаем таймер при уничтожении компонента
     if (this.intervalId) {
       clearInterval(this.intervalId);

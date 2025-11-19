@@ -1,59 +1,121 @@
-# AngApp
+# 🅰️ Angular App - Изучение основ Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.19.
+Полноценный учебный проект, демонстрирующий все основные концепции Angular Framework с примерами на русском языке.
 
-## Development server
+## 🎯 О проекте
 
-To start a local development server, run:
+Этот проект создан для изучения Angular и включает:
+- ✅ **Modules** - Модули и организация кода
+- ✅ **Components** - Компоненты с lifecycle hooks
+- ✅ **Services** - Сервисы и Dependency Injection
+- ✅ **Pipes** - Кастомные и встроенные пайпы
+- ✅ **Directives** - Атрибутивные и структурные директивы
+- ✅ **Templates** - Все возможности шаблонов Angular
+- ✅ **Environments** - Система конфигурации окружений
+- ✅ **Assets** - Организация ресурсов и модульные стили
 
+## 🚀 Быстрый старт
+
+### Установка зависимостей
 ```bash
-ng serve
+npm install
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+### Запуск приложения
 ```bash
-ng generate component component-name
+npm start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Откройте браузер: `http://localhost:4200`
 
+### Сборка
 ```bash
-ng generate --help
+npm run build          # Production
+npm run build:dev      # Development
+npm run build:staging  # Staging
 ```
 
-## Building
+## 📖 Документация
 
-To build the project run:
+- **[ANGULAR_BASICS_RU.md](ANGULAR_BASICS_RU.md)** - 📚 Полное руководство по основам Angular
+- **[PROJECT_SUMMARY.md](PROJECT_SUMMARY.md)** - 📋 Описание всего проекта
+- **[ENVIRONMENTS.md](ENVIRONMENTS.md)** - 🌍 Работа с окружениями
+- **[ASSETS_INFO.md](ASSETS_INFO.md)** - 🎨 Использование assets и стилей
 
-```bash
-ng build
+### Детальная документация
+- `src/assets/USAGE.md` - Подробное руководство по assets (12KB)
+- `src/environments/README.md` - Подробно об environments
+- `src/assets/README.md` - О структуре assets
+
+## 🎨 Возможности
+
+### Интерактивное приложение с 7 вкладками:
+1. **📚 О проекте** - Обзор всех концепций
+2. **🎯 Компоненты** - Работа с компонентами и сервисами
+3. **📄 Шаблоны** - Все возможности Angular шаблонов
+4. **✨ Директивы** - Кастомные директивы в действии
+5. **🔄 Пайпы** - Встроенные и кастомные пайпы
+6. **🧩 Модули** - NgModules и организация кода
+7. **🌍 Environment** - Информация об окружении
+
+### Модульная система стилей (LESS)
+- **Variables** - Переменные цветов, размеров, отступов
+- **Mixins** - Переиспользуемые стили
+- **Utilities** - Готовые CSS классы
+- **Animations** - Коллекция анимаций
+
+## 🛠️ Технологии
+
+- **Angular:** 19.2.0
+- **TypeScript:** 5.7.2
+- **RxJS:** 7.8.0
+- **LESS:** Препроцессор CSS
+- **Standalone Components:** ✅
+
+## 📁 Структура проекта
+
+```
+ang-app/
+├── src/
+│   ├── app/
+│   │   ├── components/        # Компоненты
+│   │   ├── services/          # Сервисы
+│   │   ├── pipes/             # Пайпы
+│   │   ├── directives/        # Директивы
+│   │   └── features/          # Feature модули
+│   ├── assets/                # Ресурсы
+│   │   ├── data/              # JSON данные
+│   │   ├── icons/             # SVG иконки
+│   │   ├── images/            # Изображения
+│   │   └── styles/            # LESS стили
+│   └── environments/          # Окружения
+├── ANGULAR_BASICS_RU.md       # Главное руководство
+├── PROJECT_SUMMARY.md         # Описание проекта
+└── package.json
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 💡 Примеры кода
 
-## Running unit tests
+Все файлы содержат подробные комментарии на русском языке с объяснениями.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 🎓 Для кого
 
-```bash
-ng test
-```
+- Начинающие разработчики Angular
+- Студенты изучающие фронтенд
+- Преподаватели для демонстрации
+- Reference проект для разработки
 
-## Running end-to-end tests
+## 🔗 Полезные ссылки
 
-For end-to-end (e2e) testing, run:
+- [Angular Documentation](https://angular.io/docs)
+- [Angular CLI](https://angular.io/cli)
+- [RxJS](https://rxjs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
 
-```bash
-ng e2e
-```
+## 📝 Лицензия
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Учебный проект для свободного использования.
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**Angular 19 • Основы фреймворка • 2024** 🚀

@@ -1,10 +1,10 @@
 /* Глобальные стили приложения */
 
 // Импорт переменных, миксинов, утилит и анимаций из assets
-@import 'assets/styles/variables';
-@import 'assets/styles/mixins';
-@import 'assets/styles/utilities';
-@import 'assets/styles/animations';
+@import 'assets/styles/_variables.less';
+@import 'assets/styles/_mixins.less';
+@import 'assets/styles/_utilities.less';
+@import 'assets/styles/_animations.less';
 
 /* Сброс стилей */
 * {
@@ -49,7 +49,7 @@ body {
 button {
   cursor: pointer;
   font-family: inherit;
-  
+
   &:focus {
     outline: 2px solid #667eea;
     outline-offset: 2px;
@@ -59,7 +59,7 @@ button {
 /* Инпуты */
 input, textarea {
   font-family: inherit;
-  
+
   &:focus {
     outline: 2px solid #667eea;
     outline-offset: 2px;
@@ -79,7 +79,7 @@ input, textarea {
 ::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 5px;
-  
+
   &:hover {
     background: #555;
   }
@@ -101,7 +101,7 @@ pre {
   padding: 15px;
   border-radius: 5px;
   overflow-x: auto;
-  
+
   code {
     background: transparent;
     padding: 0;

@@ -1,0 +1,17 @@
+# Environment файлы с реальными ключами
+# НЕ коммитить файлы с реальными секретами!
+
+# Локальные переопределения
+environment.local.ts
+environment.*.local.ts
+
+# Файлы с реальными ключами
+environment.secrets.ts
+*.secret.ts
+*.secrets.ts
+
+# .env файлы
+.env
+.env.local
+.env.*.local
+

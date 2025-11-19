@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { DemoTemplatesComponent } from './components/demo-templates/demo-templates.component';
-import { ExamplesModule } from './features/examples/examples.module';
+import { EnvironmentInfoComponent } from './components/environment-info/environment-info.component';
+import { ExamplesComponent } from './features/examples/examples.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { TooltipDirective } from './directives/tooltip.directive';
 import { TruncatePipe } from './pipes/truncate.pipe';
-
+import { UserComponent } from './user-module/user/user.component';
 /**
  * Главный компонент приложения
  * Демонстрирует все основные концепции Angular
@@ -16,10 +17,12 @@ import { TruncatePipe } from './pipes/truncate.pipe';
   selector: 'app-root',
   imports: [
     CommonModule,
+    UserComponent,
     RouterOutlet,
     UserListComponent,
     DemoTemplatesComponent,
-    ExamplesModule,
+    EnvironmentInfoComponent,
+    ExamplesComponent,
     HighlightDirective,
     TooltipDirective,
     TruncatePipe
@@ -42,7 +45,8 @@ export class AppComponent {
     { id: 'templates', name: '📄 Шаблоны', description: 'Templates & Binding' },
     { id: 'directives', name: '✨ Директивы', description: 'Кастомные директивы' },
     { id: 'pipes', name: '🔄 Пайпы', description: 'Трансформация данных' },
-    { id: 'modules', name: '🧩 Модули', description: 'NgModules' }
+    { id: 'modules', name: '🧩 Модули', description: 'NgModules' },
+    { id: 'environment', name: '🌍 Environment', description: 'Окружения' }
   ];
 
   setActiveTab(tabId: string): void {

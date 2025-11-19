@@ -1,0 +1,24 @@
+{
+  "files.associations": {
+    "*.less": "less"
+  },
+  "emmet.includeLanguages": {
+    "typescript": "html"
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/node_modules": true,
+    "**/.angular": true,
+    "**/dist": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/.angular": true
+  },
+  // Подсветка для environment файлов
+  "files.autoGuessEncoding": true,
+  // Автосохранение
+  "files.autoSave": "onFocusChange"
+}
+
