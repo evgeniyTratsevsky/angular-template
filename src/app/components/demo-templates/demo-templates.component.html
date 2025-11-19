@@ -1,0 +1,159 @@
+<div class="demo-container">
+  <h1>{{ title }}</h1>
+  
+  <!-- ==================== INTERPOLATION ==================== -->
+  <section class="demo-section">
+    <h2>1. Interpolation (Интерполяция)</h2>
+    <div class="demo-content">
+      <p>Имя: {{ user.firstName }} {{ user.lastName }}</p>
+      <p>Возраст: {{ user.age }} лет</p>
+      <p>Статус: {{ user.isActive ? 'Активен' : 'Неактивен' }}</p>
+      <p>Выражение: 2 + 2 = {{ 2 + 2 }}</p>
+    </div>
+  </section>
+
+  <!-- ==================== PROPERTY BINDING ==================== -->
+  <section class="demo-section">
+    <h2>2. Property Binding (Привязка свойств)</h2>
+    <div class="demo-content">
+      <!-- Привязка атрибута src -->
+      <img [src]="'https://angular.io/assets/images/logos/angular/angular.svg'" 
+           [alt]="'Angular Logo'" 
+           [width]="100">
+      
+      <!-- Привязка disabled -->
+      <button [disabled]="counter >= 10">Кнопка (отключается при counter >= 10)</button>
+      
+      <!-- Привязка стилей -->
+      <div [style.color]="selectedColor" [style.fontSize.px]="20">
+        Цветной текст (выбранный цвет: {{ selectedColor }})
+      </div>
+      
+      <!-- Привязка классов -->
+      <p [class.active]="isVisible" [class.inactive]="!isVisible">
+        Текст с динамическим классом
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== EVENT BINDING ==================== -->
+  <section class="demo-section">
+    <h2>3. Event Binding (Привязка событий)</h2>
+    <div class="demo-content">
+      <div class="counter-demo">
+        <p>Счетчик: <strong>{{ counter }}</strong></p>
+        <div class="button-group">
+          <button (click)="decrement()">-</button>
+          <button (click)="reset()">Сбросить</button>
+          <button (click)="increment()">+</button>
+        </div>
+      </div>
+      
+      <div class="input-demo">
+        <input 
+          type="text" 
+          (input)="onInputChange($event)"
+          (focus)="console.log('Focus!')"
+          (blur)="console.log('Blur!')"
+          placeholder="Введите текст">
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TWO-WAY BINDING ==================== -->
+  <section class="demo-section">
+    <h2>4. Two-Way Binding (Двусторонняя привязка)</h2>
+    <div class="demo-content">
+      <input type="text" [(ngModel)]="inputValue" placeholder="Введите текст">
+      <p>Вы ввели: <strong>{{ inputValue }}</strong></p>
+      
+      <input type="color" [(ngModel)]="selectedColor">
+      <p>Выбранный цвет: <span [style.color]="selectedColor">{{ selectedColor }}</span></p>
+    </div>
+  </section>
+
+  <!-- ==================== STRUCTURAL DIRECTIVES ==================== -->
+  <section class="demo-section">
+    <h2>5. Structural Directives (*ngIf, *ngFor)</h2>
+    <div class="demo-content">
+      <!-- *ngIf -->
+      <div class="visibility-demo">
+        <button (click)="toggleVisibility()">
+          {{ isVisible ? 'Скрыть' : 'Показать' }} блок
+        </button>
+        <div *ngIf="isVisible" class="info-box">
+          Этот блок появляется и исчезает!
+        </div>
+      </div>
+
+      <!-- *ngFor -->
+      <div class="list-demo">
+        <h3>Технологии:</h3>
+        <button (click)="addItem()">Добавить элемент</button>
+        <ul>
+          <li *ngFor="let item of items; let i = index; trackBy: trackByFn">
+            <span>{{ i + 1 }}. {{ item.icon }} {{ item.name }}</span>
+            <button (click)="removeItem(item.id)" class="btn-small">❌</button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- *ngIf с else -->
+      <div class="conditional-demo">
+        <div *ngIf="items.length > 0; else noItems">
+          <p>Элементов в списке: {{ items.length }}</p>
+        </div>
+        <ng-template #noItems>
+          <p class="warning">Список пуст!</p>
+        </ng-template>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PIPES ==================== -->
+  <section class="demo-section">
+    <h2>6. Pipes (Пайпы)</h2>
+    <div class="demo-content">
+      <h3>Встроенные пайпы:</h3>
+      <p>Uppercase: {{ 'angular' | uppercase }}</p>
+      <p>Lowercase: {{ 'ANGULAR' | lowercase }}</p>
+      <p>Date: {{ Date.now() | date:'dd.MM.yyyy HH:mm' }}</p>
+      <p>Currency: {{ 1234.56 | currency:'RUB' }}</p>
+      <p>Percent: {{ 0.75 | percent }}</p>
+      <p>JSON: {{ user | json }}</p>
+
+      <h3>Кастомный пайп (Highlight):</h3>
+      <input type="text" [(ngModel)]="searchText" placeholder="Поиск...">
+      <div 
+        [innerHTML]="'Angular - это платформа для создания веб-приложений' | highlight:searchText"
+        class="highlight-demo">
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TEMPLATE REFERENCE VARIABLES ==================== -->
+  <section class="demo-section">
+    <h2>7. Template Reference Variables</h2>
+    <div class="demo-content">
+      <input #myInput type="text" placeholder="Введите текст">
+      <button (click)="myInput.value = ''">Очистить</button>
+      <button (click)="myInput.focus()">Фокус</button>
+      <p>Значение: {{ myInput.value }}</p>
+      <p>Тип элемента: {{ myInput.type }}</p>
+    </div>
+  </section>
+
+  <!-- ==================== NG-CONTAINER ==================== -->
+  <section class="demo-section">
+    <h2>8. ng-container (группировка без лишнего DOM)</h2>
+    <div class="demo-content">
+      <ng-container *ngIf="isVisible">
+        <p>Первый параграф</p>
+        <p>Второй параграф</p>
+        <p>Третий параграф</p>
+        <p class="note">Эти элементы обернуты в ng-container, который не создает лишний DOM элемент</p>
+      </ng-container>
+    </div>
+  </section>
+</div>
+

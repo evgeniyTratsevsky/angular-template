@@ -1,0 +1,60 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Иван Иванов",
+      "email": "ivan@example.com",
+      "role": "admin",
+      "avatar": "assets/images/avatars/user1.png",
+      "isActive": true
+    },
+    {
+      "id": 2,
+      "name": "Петр Петров",
+      "email": "petr@example.com",
+      "role": "user",
+      "avatar": "assets/images/avatars/user2.png",
+      "isActive": true
+    },
+    {
+      "id": 3,
+      "name": "Мария Сидорова",
+      "email": "maria@example.com",
+      "role": "moderator",
+      "avatar": "assets/images/avatars/user3.png",
+      "isActive": false
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Angular Курс",
+      "description": "Полный курс по Angular",
+      "price": 2999,
+      "currency": "RUB",
+      "image": "assets/images/products/angular-course.png",
+      "category": "Обучение"
+    },
+    {
+      "id": 2,
+      "name": "TypeScript Книга",
+      "description": "Изучение TypeScript с нуля",
+      "price": 1499,
+      "currency": "RUB",
+      "image": "assets/images/products/typescript-book.png",
+      "category": "Книги"
+    }
+  ],
+  "settings": {
+    "appName": "Angular App",
+    "version": "1.0.0",
+    "theme": "light",
+    "language": "ru",
+    "features": {
+      "darkMode": true,
+      "notifications": true,
+      "analytics": false
+    }
+  }
+}
+

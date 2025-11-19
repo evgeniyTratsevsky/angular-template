@@ -1,12 +1,52 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { UserListComponent } from './components/user-list/user-list.component';
+import { DemoTemplatesComponent } from './components/demo-templates/demo-templates.component';
+import { ExamplesModule } from './features/examples/examples.module';
+import { HighlightDirective } from './directives/highlight.directive';
+import { TooltipDirective } from './directives/tooltip.directive';
+import { TruncatePipe } from './pipes/truncate.pipe';
 
+/**
+ * Главный компонент приложения
+ * Демонстрирует все основные концепции Angular
+ */
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    UserListComponent,
+    DemoTemplatesComponent,
+    ExamplesModule,
+    HighlightDirective,
+    TooltipDirective,
+    TruncatePipe
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.less'
 })
 export class AppComponent {
-  title = 'ang-app';
+  title = 'Изучение Angular - Основы';
+  activeTab = 'about';
+  Date = Date; // Для использования в шаблоне
+
+  // Данные для демонстрации пайпа
+  longText = 'Angular - это платформа и фреймворк для создания одностраничных клиентских приложений с использованием HTML и TypeScript. Angular написан на TypeScript.';
+
+  // Навигационные вкладки
+  tabs = [
+    { id: 'about', name: '📚 О проекте', description: 'Обзор основных концепций' },
+    { id: 'components', name: '🎯 Компоненты', description: 'Components & Services' },
+    { id: 'templates', name: '📄 Шаблоны', description: 'Templates & Binding' },
+    { id: 'directives', name: '✨ Директивы', description: 'Кастомные директивы' },
+    { id: 'pipes', name: '🔄 Пайпы', description: 'Трансформация данных' },
+    { id: 'modules', name: '🧩 Модули', description: 'NgModules' }
+  ];
+
+  setActiveTab(tabId: string): void {
+    this.activeTab = tabId;
+    console.log('Активная вкладка:', tabId);
+  }
 }

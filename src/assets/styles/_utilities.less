@@ -1,0 +1,335 @@
+// =====================================================
+// УТИЛИТЫ - Utility Classes
+// =====================================================
+
+@import './variables';
+
+// Margin утилиты
+// =====================================================
+
+.m-0 { margin: 0; }
+.m-xs { margin: @spacing-xs; }
+.m-sm { margin: @spacing-sm; }
+.m-md { margin: @spacing-md; }
+.m-lg { margin: @spacing-lg; }
+.m-xl { margin: @spacing-xl; }
+
+.mt-0 { margin-top: 0; }
+.mt-xs { margin-top: @spacing-xs; }
+.mt-sm { margin-top: @spacing-sm; }
+.mt-md { margin-top: @spacing-md; }
+.mt-lg { margin-top: @spacing-lg; }
+.mt-xl { margin-top: @spacing-xl; }
+
+.mb-0 { margin-bottom: 0; }
+.mb-xs { margin-bottom: @spacing-xs; }
+.mb-sm { margin-bottom: @spacing-sm; }
+.mb-md { margin-bottom: @spacing-md; }
+.mb-lg { margin-bottom: @spacing-lg; }
+.mb-xl { margin-bottom: @spacing-xl; }
+
+.ml-0 { margin-left: 0; }
+.ml-xs { margin-left: @spacing-xs; }
+.ml-sm { margin-left: @spacing-sm; }
+.ml-md { margin-left: @spacing-md; }
+.ml-lg { margin-left: @spacing-lg; }
+.ml-xl { margin-left: @spacing-xl; }
+
+.mr-0 { margin-right: 0; }
+.mr-xs { margin-right: @spacing-xs; }
+.mr-sm { margin-right: @spacing-sm; }
+.mr-md { margin-right: @spacing-md; }
+.mr-lg { margin-right: @spacing-lg; }
+.mr-xl { margin-right: @spacing-xl; }
+
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+// Padding утилиты
+// =====================================================
+
+.p-0 { padding: 0; }
+.p-xs { padding: @spacing-xs; }
+.p-sm { padding: @spacing-sm; }
+.p-md { padding: @spacing-md; }
+.p-lg { padding: @spacing-lg; }
+.p-xl { padding: @spacing-xl; }
+
+.pt-0 { padding-top: 0; }
+.pt-xs { padding-top: @spacing-xs; }
+.pt-sm { padding-top: @spacing-sm; }
+.pt-md { padding-top: @spacing-md; }
+.pt-lg { padding-top: @spacing-lg; }
+.pt-xl { padding-top: @spacing-xl; }
+
+.pb-0 { padding-bottom: 0; }
+.pb-xs { padding-bottom: @spacing-xs; }
+.pb-sm { padding-bottom: @spacing-sm; }
+.pb-md { padding-bottom: @spacing-md; }
+.pb-lg { padding-bottom: @spacing-lg; }
+.pb-xl { padding-bottom: @spacing-xl; }
+
+.pl-0 { padding-left: 0; }
+.pl-xs { padding-left: @spacing-xs; }
+.pl-sm { padding-left: @spacing-sm; }
+.pl-md { padding-left: @spacing-md; }
+.pl-lg { padding-left: @spacing-lg; }
+.pl-xl { padding-left: @spacing-xl; }
+
+.pr-0 { padding-right: 0; }
+.pr-xs { padding-right: @spacing-xs; }
+.pr-sm { padding-right: @spacing-sm; }
+.pr-md { padding-right: @spacing-md; }
+.pr-lg { padding-right: @spacing-lg; }
+.pr-xl { padding-right: @spacing-xl; }
+
+// Текст утилиты
+// =====================================================
+
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-justify { text-align: justify; }
+
+.text-lowercase { text-transform: lowercase; }
+.text-uppercase { text-transform: uppercase; }
+.text-capitalize { text-transform: capitalize; }
+
+.text-bold { font-weight: @font-weight-bold; }
+.text-semibold { font-weight: @font-weight-semibold; }
+.text-medium { font-weight: @font-weight-medium; }
+.text-normal { font-weight: @font-weight-normal; }
+.text-light { font-weight: @font-weight-light; }
+
+.text-xs { font-size: @font-size-xs; }
+.text-sm { font-size: @font-size-sm; }
+.text-md { font-size: @font-size-md; }
+.text-lg { font-size: @font-size-lg; }
+.text-xl { font-size: @font-size-xl; }
+.text-xxl { font-size: @font-size-xxl; }
+
+.text-primary { color: @primary-color; }
+.text-secondary { color: @secondary-color; }
+.text-success { color: @success-color; }
+.text-warning { color: @warning-color; }
+.text-danger { color: @danger-color; }
+.text-info { color: @info-color; }
+.text-muted { color: @text-secondary; }
+.text-white { color: @text-white; }
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Фон утилиты
+// =====================================================
+
+.bg-white { background-color: @bg-white; }
+.bg-light { background-color: @bg-light; }
+.bg-gray { background-color: @bg-gray; }
+.bg-dark { background-color: @bg-dark; }
+
+.bg-primary { background-color: @primary-color; }
+.bg-secondary { background-color: @secondary-color; }
+.bg-success { background-color: @success-color; }
+.bg-warning { background-color: @warning-color; }
+.bg-danger { background-color: @danger-color; }
+.bg-info { background-color: @info-color; }
+
+.bg-gradient-primary { background: @gradient-primary; }
+.bg-gradient-success { background: @gradient-success; }
+.bg-gradient-warning { background: @gradient-warning; }
+.bg-gradient-danger { background: @gradient-danger; }
+
+// Display утилиты
+// =====================================================
+
+.d-none { display: none; }
+.d-block { display: block; }
+.d-inline { display: inline; }
+.d-inline-block { display: inline-block; }
+.d-flex { display: flex; }
+.d-inline-flex { display: inline-flex; }
+.d-grid { display: grid; }
+
+// Flex утилиты
+// =====================================================
+
+.flex-row { flex-direction: row; }
+.flex-column { flex-direction: column; }
+.flex-row-reverse { flex-direction: row-reverse; }
+.flex-column-reverse { flex-direction: column-reverse; }
+
+.flex-wrap { flex-wrap: wrap; }
+.flex-nowrap { flex-wrap: nowrap; }
+
+.justify-start { justify-content: flex-start; }
+.justify-center { justify-content: center; }
+.justify-end { justify-content: flex-end; }
+.justify-between { justify-content: space-between; }
+.justify-around { justify-content: space-around; }
+
+.align-start { align-items: flex-start; }
+.align-center { align-items: center; }
+.align-end { align-items: flex-end; }
+.align-stretch { align-items: stretch; }
+.align-baseline { align-items: baseline; }
+
+.flex-1 { flex: 1; }
+.flex-auto { flex: 1 1 auto; }
+.flex-grow-0 { flex-grow: 0; }
+.flex-grow-1 { flex-grow: 1; }
+.flex-shrink-0 { flex-shrink: 0; }
+.flex-shrink-1 { flex-shrink: 1; }
+
+// Position утилиты
+// =====================================================
+
+.position-static { position: static; }
+.position-relative { position: relative; }
+.position-absolute { position: absolute; }
+.position-fixed { position: fixed; }
+.position-sticky { position: sticky; }
+
+// Размеры утилиты
+// =====================================================
+
+.w-25 { width: 25%; }
+.w-50 { width: 50%; }
+.w-75 { width: 75%; }
+.w-100 { width: 100%; }
+.w-auto { width: auto; }
+
+.h-25 { height: 25%; }
+.h-50 { height: 50%; }
+.h-75 { height: 75%; }
+.h-100 { height: 100%; }
+.h-auto { height: auto; }
+
+.mw-100 { max-width: 100%; }
+.mh-100 { max-height: 100%; }
+
+// Border утилиты
+// =====================================================
+
+.border { border: 1px solid @border-color; }
+.border-0 { border: 0; }
+.border-top { border-top: 1px solid @border-color; }
+.border-bottom { border-bottom: 1px solid @border-color; }
+.border-left { border-left: 1px solid @border-color; }
+.border-right { border-right: 1px solid @border-color; }
+
+.rounded { border-radius: @border-radius-md; }
+.rounded-sm { border-radius: @border-radius-sm; }
+.rounded-lg { border-radius: @border-radius-lg; }
+.rounded-xl { border-radius: @border-radius-xl; }
+.rounded-full { border-radius: @border-radius-full; }
+.rounded-0 { border-radius: 0; }
+
+// Shadow утилиты
+// =====================================================
+
+.shadow-none { box-shadow: none; }
+.shadow-sm { box-shadow: @shadow-sm; }
+.shadow { box-shadow: @shadow-md; }
+.shadow-lg { box-shadow: @shadow-lg; }
+.shadow-xl { box-shadow: @shadow-xl; }
+
+// Overflow утилиты
+// =====================================================
+
+.overflow-auto { overflow: auto; }
+.overflow-hidden { overflow: hidden; }
+.overflow-visible { overflow: visible; }
+.overflow-scroll { overflow: scroll; }
+
+.overflow-x-auto { overflow-x: auto; }
+.overflow-y-auto { overflow-y: auto; }
+
+// Cursor утилиты
+// =====================================================
+
+.cursor-pointer { cursor: pointer; }
+.cursor-default { cursor: default; }
+.cursor-not-allowed { cursor: not-allowed; }
+.cursor-wait { cursor: wait; }
+
+// Видимость утилиты
+// =====================================================
+
+.visible { visibility: visible; }
+.invisible { visibility: hidden; }
+
+.opacity-0 { opacity: 0; }
+.opacity-25 { opacity: 0.25; }
+.opacity-50 { opacity: 0.5; }
+.opacity-75 { opacity: 0.75; }
+.opacity-100 { opacity: 1; }
+
+// Z-index утилиты
+// =====================================================
+
+.z-0 { z-index: 0; }
+.z-10 { z-index: 10; }
+.z-20 { z-index: 20; }
+.z-30 { z-index: 30; }
+.z-40 { z-index: 40; }
+.z-50 { z-index: 50; }
+
+// Gap утилиты (для flex и grid)
+// =====================================================
+
+.gap-0 { gap: 0; }
+.gap-xs { gap: @spacing-xs; }
+.gap-sm { gap: @spacing-sm; }
+.gap-md { gap: @spacing-md; }
+.gap-lg { gap: @spacing-lg; }
+.gap-xl { gap: @spacing-xl; }
+
+// Hover утилиты
+// =====================================================
+
+.hover-opacity {
+  transition: opacity @transition-duration-base;
+  
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.hover-scale {
+  transition: transform @transition-duration-base;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.hover-lift {
+  transition: transform @transition-duration-base, box-shadow @transition-duration-base;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: @shadow-lg;
+  }
+}
+
+// Адаптивность
+// =====================================================
+
+@media (max-width: @screen-sm) {
+  .d-sm-none { display: none; }
+  .d-sm-block { display: block; }
+}
+
+@media (max-width: @screen-md) {
+  .d-md-none { display: none; }
+  .d-md-block { display: block; }
+}
+
+@media (max-width: @screen-lg) {
+  .d-lg-none { display: none; }
+  .d-lg-block { display: block; }
+}
+

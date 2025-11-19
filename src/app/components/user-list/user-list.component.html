@@ -1,0 +1,86 @@
+<!-- 
+  TEMPLATE - HTML шаблон с Angular директивами
+  
+  Основные концепции шаблонов:
+  1. Interpolation - {{ variable }}
+  2. Property Binding - [property]="value"
+  3. Event Binding - (event)="handler()"
+  4. Two-way Binding - [(ngModel)]="value"
+  5. Structural Directives - *ngIf, *ngFor
+  6. Attribute Directives - [class], [style]
+  7. Template Reference Variables - #variable
+-->
+
+<div class="user-list-container">
+  <h2>Список пользователей</h2>
+  
+  <!-- *ngIf - структурная директива для условного отображения -->
+  <div *ngIf="users.length === 0" class="empty-state">
+    <p>Нет пользователей для отображения</p>
+  </div>
+
+  <!-- *ngIf с else -->
+  <div *ngIf="users.length > 0; else noUsers">
+    <p class="user-count">Всего пользователей: <strong>{{ users.length }}</strong></p>
+    
+    <!-- *ngFor - структурная директива для циклов -->
+    <div class="user-grid">
+      <div 
+        *ngFor="let user of users; let i = index; let isFirst = first; let isLast = last"
+        class="user-card"
+        [class.selected]="selectedUser?.id === user.id"
+        [class.first]="isFirst"
+        [class.last]="isLast"
+        (click)="selectUser(user)"
+        [appHighlight]="'#e3f2fd'"
+        [appTooltip]="'Кликните для выбора'"
+      >
+        <div class="user-header">
+          <span class="user-index">#{{ i + 1 }}</span>
+          <!-- Property Binding и CSS class -->
+          <span [class]="getRoleClass(user.role)">{{ user.role }}</span>
+        </div>
+        
+        <div class="user-body">
+          <!-- Interpolation - вставка данных -->
+          <h3>{{ user.name }}</h3>
+          
+          <!-- Использование пайпа -->
+          <p class="user-email">{{ user.email | truncate:20 }}</p>
+          
+          <p class="user-id">ID: {{ user.id }}</p>
+        </div>
+        
+        <div class="user-actions">
+          <!-- Event Binding -->
+          <button 
+            class="btn btn-danger"
+            (click)="deleteUser(user.id); $event.stopPropagation()"
+            [appTooltip]="'Удалить пользователя'"
+          >
+            Удалить
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ng-template для else блока -->
+  <ng-template #noUsers>
+    <div class="alert alert-info">
+      <p>Список пользователей пуст</p>
+    </div>
+  </ng-template>
+
+  <!-- Отображение выбранного пользователя -->
+  <div *ngIf="selectedUser" class="selected-user-info">
+    <h3>Выбранный пользователь:</h3>
+    <div class="info-block" [appHighlight]="'#fff3cd'">
+      <p><strong>Имя:</strong> {{ selectedUser.name }}</p>
+      <p><strong>Email:</strong> {{ selectedUser.email }}</p>
+      <p><strong>Роль:</strong> {{ selectedUser.role }}</p>
+      <p><strong>ID:</strong> {{ selectedUser.id }}</p>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,209 @@
+// =====================================================
+// ПЕРЕМЕННЫЕ СТИЛЕЙ - Variables
+// =====================================================
+
+// Цвета - Colors
+// =====================================================
+
+// Основные цвета бренда
+@primary-color: #667eea;
+@primary-dark: #5568d3;
+@primary-light: #7c8ff0;
+@secondary-color: #764ba2;
+@accent-color: #f50057;
+
+// Градиенты
+@gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+@gradient-success: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+@gradient-warning: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+@gradient-danger: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+
+// Цвета состояний
+@success-color: #4caf50;
+@warning-color: #ff9800;
+@danger-color: #f44336;
+@info-color: #2196f3;
+
+// Серые оттенки
+@gray-darkest: #212121;
+@gray-darker: #333333;
+@gray-dark: #666666;
+@gray: #999999;
+@gray-light: #cccccc;
+@gray-lighter: #e0e0e0;
+@gray-lightest: #f5f5f5;
+
+// Текст
+@text-primary: #333333;
+@text-secondary: #666666;
+@text-disabled: #999999;
+@text-white: #ffffff;
+
+// Фон
+@bg-white: #ffffff;
+@bg-light: #f9f9f9;
+@bg-gray: #f5f5f5;
+@bg-dark: #2d2d2d;
+
+// Границы
+@border-color: #e0e0e0;
+@border-color-dark: #cccccc;
+@border-color-light: #eeeeee;
+
+// Типографика - Typography
+// =====================================================
+
+@font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+@font-family-code: 'Courier New', Courier, monospace;
+
+@font-size-base: 16px;
+@font-size-xs: 12px;
+@font-size-sm: 14px;
+@font-size-md: 16px;
+@font-size-lg: 18px;
+@font-size-xl: 20px;
+@font-size-xxl: 24px;
+
+@font-weight-light: 300;
+@font-weight-normal: 400;
+@font-weight-medium: 500;
+@font-weight-semibold: 600;
+@font-weight-bold: 700;
+
+@line-height-base: 1.6;
+@line-height-tight: 1.2;
+@line-height-relaxed: 1.8;
+
+// Заголовки
+@h1-size: 2.5rem;
+@h2-size: 2rem;
+@h3-size: 1.75rem;
+@h4-size: 1.5rem;
+@h5-size: 1.25rem;
+@h6-size: 1rem;
+
+// Spacing (Отступы)
+// =====================================================
+
+@spacing-xs: 4px;
+@spacing-sm: 8px;
+@spacing-md: 16px;
+@spacing-lg: 24px;
+@spacing-xl: 32px;
+@spacing-xxl: 48px;
+
+// Breakpoints (Точки перелома)
+// =====================================================
+
+@screen-xs: 480px;
+@screen-sm: 768px;
+@screen-md: 992px;
+@screen-lg: 1200px;
+@screen-xl: 1600px;
+
+// Размеры - Sizes
+// =====================================================
+
+@max-width-sm: 640px;
+@max-width-md: 768px;
+@max-width-lg: 1024px;
+@max-width-xl: 1280px;
+@max-width-xxl: 1400px;
+
+// Радиусы скругления - Border Radius
+// =====================================================
+
+@border-radius-sm: 4px;
+@border-radius-md: 8px;
+@border-radius-lg: 12px;
+@border-radius-xl: 16px;
+@border-radius-full: 9999px;
+
+// Тени - Shadows
+// =====================================================
+
+@shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+@shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+@shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.15);
+@shadow-xl: 0 8px 24px rgba(0, 0, 0, 0.2);
+
+// Тени для кнопок
+@shadow-primary: 0 4px 12px rgba(102, 126, 234, 0.4);
+@shadow-success: 0 4px 12px rgba(76, 175, 80, 0.4);
+@shadow-warning: 0 4px 12px rgba(255, 152, 0, 0.4);
+@shadow-danger: 0 4px 12px rgba(244, 67, 54, 0.4);
+
+// Z-index (Слои)
+// =====================================================
+
+@z-index-dropdown: 1000;
+@z-index-sticky: 1020;
+@z-index-fixed: 1030;
+@z-index-modal-backdrop: 1040;
+@z-index-modal: 1050;
+@z-index-popover: 1060;
+@z-index-tooltip: 1070;
+
+// Transitions (Переходы)
+// =====================================================
+
+@transition-duration-fast: 0.15s;
+@transition-duration-base: 0.3s;
+@transition-duration-slow: 0.5s;
+
+@transition-timing: ease-in-out;
+@transition-timing-in: ease-in;
+@transition-timing-out: ease-out;
+
+@transition-base: all @transition-duration-base @transition-timing;
+@transition-fast: all @transition-duration-fast @transition-timing;
+@transition-slow: all @transition-duration-slow @transition-timing;
+
+// Buttons (Кнопки)
+// =====================================================
+
+@btn-padding-y: 10px;
+@btn-padding-x: 20px;
+@btn-font-size: @font-size-md;
+@btn-border-radius: @border-radius-md;
+
+@btn-sm-padding-y: 6px;
+@btn-sm-padding-x: 12px;
+@btn-sm-font-size: @font-size-sm;
+
+@btn-lg-padding-y: 14px;
+@btn-lg-padding-x: 28px;
+@btn-lg-font-size: @font-size-lg;
+
+// Inputs (Поля ввода)
+// =====================================================
+
+@input-padding-y: 8px;
+@input-padding-x: 12px;
+@input-font-size: @font-size-md;
+@input-border-radius: @border-radius-sm;
+@input-border-color: @border-color;
+@input-focus-border-color: @primary-color;
+
+// Cards (Карточки)
+// =====================================================
+
+@card-padding: 20px;
+@card-border-radius: @border-radius-md;
+@card-shadow: @shadow-md;
+@card-bg: @bg-white;
+
+// Header/Footer
+// =====================================================
+
+@header-height: 80px;
+@footer-height: 60px;
+@navbar-height: 60px;
+
+// Анимации
+// =====================================================
+
+@animation-duration-fast: 0.2s;
+@animation-duration-base: 0.3s;
+@animation-duration-slow: 0.5s;
+
